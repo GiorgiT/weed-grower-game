@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weed Grower Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        #gameContainer {
+            margin: 20px auto;
+            width: 300px;
+            height: 500px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            position: relative;
+        }
+        #weed {
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Weed Grower Game</h1>
+    <div id="gameContainer">
+        <div id="weed"></div>
+    </div>
+    <script>
+        let weed = document.getElementById('weed');
+        let growthStage = 1;
+
+        function growWeed() {
+            growthStage++;
+            if (growthStage > 3) growthStage = 1;
+            weed.style.width = 50 * growthStage + 'px';
+            weed.style.height = 50 * growthStage + 'px';
+        }
+
+        setInterval(growWeed, 3000);
+    </script>
+</body>
+</html>
